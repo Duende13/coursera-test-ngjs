@@ -1,31 +1,34 @@
 <!doctype html>
-<html lang="en" ng-app="LunchCheck">
-  <head>
-    <title>Lunch Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <script src="angular.min.js"></script>
-    <script src="app.js"></script>
-    <style>
-      .message { font-size: 1.3em; font-weight: bold; }
-    </style>
-  </head>
-<body>
-   <div class="container" ng-controller='LunchCheckController'>
-     <h1>Lunch Checker</h1>
+<html  lang="en">
+<head charset="utf-8">
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>Lunch Checker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="styles/bootstrap.min.css">
 
-         <div class="form-group">
-             <input id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control" ng-model="list_foods">
-         </div>
-         <div class="form-group">
-             <button class="btn btn-default"  ng-click="CheckListOfFood()" ng-model="btn_send_list">Check If Too Much</button>
-         </div>
-         <div class="form-group message" >
-           {{message}}
-         </div>
-   </div>
+  <style>
+    .message { font-size: 1.3em; font-weight: bold; }
+  </style>
+</head>
+<body ng-app="LunchCheck" >
+ <div class="container" >
+   <h1>Lunch Checker</h1>
+    <div ng-controller='LunchCheckController'>
+       <div class="form-group">
+           <input ng-model="lunchMenu" id="lunch-menu" type="text"
+           placeholder="list comma separated dishes you usually have for lunch"
+           class="form-control">
+       </div>
+       <div class="form-group">
+           <button ng-click="checkListOfFood()" class="btn btn-default"  >Check If Too Much</button>
+       </div>
+       <div class="form-group message" >
+         {{message}}
+       </div>
+     </div>
+
+ </div>
 
 </body>
 </html>

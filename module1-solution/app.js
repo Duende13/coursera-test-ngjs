@@ -1,3 +1,4 @@
+// App.js by Susana Ruiz
 (function () {
 'use strict';
 
@@ -16,7 +17,7 @@ function LunchCheckController($scope, $filter) {
   function calculateMenu(string) {
     var message = 0;
     if (string.length == 0){
-      message = "Put some food in your menu list, please.";
+      message = "Please enter data first.";
     } else {
       var itemsMenu = string.split(",");
       if (itemsMenu.length == 0){
